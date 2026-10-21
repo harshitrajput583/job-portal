@@ -1,78 +1,122 @@
-\# Job Portal Application
+# Job Portal — Full-Stack Web Application
 
+A full-stack job portal that connects job seekers with recruiters through role-based access, job listings, applications, and recruiter–candidate communication.
 
+## Features
 
-A full-stack job portal built with Node.js, Express.js, PostgreSQL, and React.
+- **Authentication & Authorization:** User registration, login, JWT authentication, and role-based access.
+- **Job Seeker Profiles:** Manage profile information and skills.
+- **Recruiter & Company Management:** Company profiles and recruiter job management.
+- **Job Listings:** Browse jobs and view job details.
+- **Job Applications:** Apply for jobs and track application status.
+- **Recruiter Dashboard:** Manage job listings and review applications.
+- **Saved Jobs:** Save jobs for later.
+- **Notifications:** Application-related notifications.
+- **Messaging:** Communication between recruiters and job seekers.
+- **Protected Routes:** Access control for authenticated users.
 
+## Tech Stack
 
+| Layer | Technologies |
+|---|---|
+| Frontend | React, Vite, CSS |
+| Backend | Node.js, Express.js |
+| Database | PostgreSQL |
+| Authentication | JSON Web Tokens (JWT), bcrypt |
+| API Testing | Postman |
+| Version Control | Git, GitHub |
 
-\## Features
+## Project Structure
 
+```text
+job-portal/
+├── database/
+│   └── schema.sql
+├── src/
+│   ├── config/
+│   ├── middleware/
+│   ├── app.js
+│   └── server.js
+├── job-portal-frontend/
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
+├── .gitignore
+├── package.json
+└── README.md
+```
 
+## Getting Started
 
-\- User registration and login
+### Prerequisites
 
-\- Role-based access for job seekers and recruiters
+- Node.js and npm
+- PostgreSQL
+- Git
 
-\- Job seeker profiles and skills management
+### 1. Clone the repository
 
-\- Company and job management
+```bash
+git clone https://github.com/harshitrajput583/job-portal.git
+cd job-portal
+```
 
-\- Job applications and application status tracking
+### 2. Install backend dependencies
 
-\- Saved jobs and notifications
+```bash
+npm install
+```
 
-\- Recruiter-job seeker messaging
+### 3. Configure environment variables
 
-\- JWT authentication and password hashing
+Create a `.env` file in the project root using the variable names expected by `src/config/db.js` and the backend authentication code.
 
+Use your own PostgreSQL credentials and JWT secret. Never commit real credentials or secrets to GitHub.
 
+### 4. Set up PostgreSQL
 
-\## Tech Stack
+Create a database, then execute `database/schema.sql` against that database. Configure your `.env` file to match your database setup.
 
+### 5. Start the backend
 
+```bash
+npm run dev
+```
 
-\*\*Backend:\*\* Node.js, Express.js  
+### 6. Start the frontend
 
-\*\*Database:\*\* PostgreSQL  
+Open a second terminal:
 
-\*\*Authentication:\*\* JWT, bcrypt  
+```bash
+cd job-portal-frontend
+npm install
+npm run dev
+```
 
-\*\*Frontend:\*\* React, Vite
+Open the local URL printed by Vite in your terminal.
 
+## Security
 
+- Password hashing with bcrypt.
+- JWT-based authentication.
+- Role-based access control.
+- Protected API routes and ownership checks.
+- Environment variables for sensitive configuration.
 
-\## Project Structure
+## Future Improvements
 
+- Deploy the frontend and backend.
+- Add automated tests and continuous integration.
+- Improve monitoring, logging, and API documentation.
 
+## Author
 
-\- `src/` — Backend application
+**Harshit Rajput**
 
-\- `database/schema.sql` — Database schema
+GitHub: [harshitrajput583](https://github.com/harshitrajput583)
 
-\- `job-portal-frontend/` — React frontend
+## License
 
+No license has been specified for this project yet.
 
-
-\## Setup
-
-
-
-1\. Install Node.js and PostgreSQL.
-
-2\. Clone this repository.
-
-3\. Run `npm install` in the root folder.
-
-4\. Create a `.env` file using the environment variable names required by the backend configuration.
-
-5\. Create the PostgreSQL database and apply `database/schema.sql`.
-
-6\. Start the backend using `npm run dev`.
-
-7\. In another terminal, open `job-portal-frontend/`, run `npm install`, then `npm run dev`.
-
-
-
-Never commit `.env` files, passwords, or authentication secrets.
 
