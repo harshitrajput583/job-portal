@@ -1,6 +1,5 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -12,6 +11,7 @@ import MyProfile from './pages/MyProfile'
 import RecruiterJobs from './pages/RecruiterJobs'
 import RecruiterApplications from './pages/RecruiterApplications'
 import AddJob from './pages/AddJob'
+import RecruiterSetup from './pages/RecruiterSetup'
 
 function App() {
   return (
@@ -53,6 +53,16 @@ function App() {
           }
         />
 
+        {/* Recruiter Setup */}
+        <Route
+          path="/recruiter/setup"
+          element={
+            <ProtectedRoute>
+              <RecruiterSetup />
+            </ProtectedRoute>
+          }
+        />
+
         {/* Recruiter Jobs */}
         <Route
           path="/recruiter/jobs"
@@ -88,5 +98,3 @@ function App() {
 }
 
 export default App
-
-

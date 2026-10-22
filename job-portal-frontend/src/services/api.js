@@ -284,5 +284,51 @@ export async function createJob(jobData) {
   return data
 }
 
+export async function createCompany(companyData) {
+  const token = sessionStorage.getItem('token')
+
+  const response = await fetch(`${API_BASE_URL}/api/companies`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(companyData),
+  })
+
+  const data = await response.json()
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Failed to create company')
+  }
+
+  return data
+}
+
+export async function createRecruiterProfile(profileData) {
+  const token = sessionStorage.getItem('token')
+
+  const response = await fetch(
+    `${API_BASE_URL}/api/recruiter/profile`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(profileData),
+    }
+  )
+
+  const data = await response.json()
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Failed to create recruiter profile')
+  }
+
+  return data
+}
+
+
 
 

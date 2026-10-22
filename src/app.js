@@ -2367,7 +2367,7 @@ app.patch("/api/recruiter/applications/:application_id/status", authMiddleware, 
         const oldStatus = applicationCheck.rows[0].status;
         const validTransitions = {
               APPLIED: ["SHORTLISTED", "REJECTED"],
-              SHORTLISTED: ["INTERVIEW", "REJECTED"],
+              SHORTLISTED: ["INTERVIEW","HIRED", "REJECTED"],
               INTERVIEW: ["HIRED", "REJECTED"],
               REJECTED: [],
               HIRED: []
